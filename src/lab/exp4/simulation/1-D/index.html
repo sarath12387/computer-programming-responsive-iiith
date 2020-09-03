@@ -66,6 +66,29 @@
 		<div class = 'sortingDivision' id = 'sortingDiv' ></div>
 		<div class = 'currentKeyPositionIndicator' >
 			<div class = 'currentKeyValue' id = 'key'>0</div>
+			function getKeyAndMove(e){				
+		var key_code=e.which||e.keyCode;
+		switch(key_code){
+			case 37: //left arrow key
+				moveLeft();
+				break;
+			case 38: //Up arrow key
+				moveUp();
+				break;
+			case 39: //right arrow key
+				moveRight();
+				break;
+			case 40: //down arrow key
+				moveDown();
+				break;	
+			$(window).scroll(function() {
+    if ($(this).scrollTop() > 0) {// can be whatever, 0 refers to the top space you allow
+        $('.move').hide();// Hide your element
+    }
+    else {
+        $('.move').show();// It's just if you want to show back the element if we're back on top
+    }
+});
 			<div class = 'textKeyValue' >Key Value</div>
 		</div><!-- end of currentKeyPositionIndicator -->
 	</div><!-- end of resultDisplay -->
